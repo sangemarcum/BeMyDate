@@ -33,6 +33,25 @@ btnNo.addEventListener("mouseover", (event)=> {
 
 btnNo.addEventListener("touchstart", function(){
     btnNo.classList.add("btnHover")
+    const containerHeight = container.getBoundingClientRect().height;
+    const containerWidth = container.getBoundingClientRect().width;
+    const btnHeight = btnNo.getBoundingClientRect().height;
+    const btnWidth = btnNo.getBoundingClientRect().width;
+    const btnTop = btnNo.getBoundingClientRect().top;
+    const btnLeft = btnNo.getBoundingClientRect().left;
+
+    let newTop = btnTop;
+    let newLeft = btnLeft;
+    while (Math.abs(newTop - btnTop) < containerHeight / 3) {
+        newTop = getRandomNumber(0, containerHeight - btnHeight);
+    }
+
+    while (Math.abs(newLeft - btnLeft) < containerWidth / 3) {
+        newLeft = getRandomNumber(0, containerWidth - btnWidth);
+    }
+
+    btnNo.style.top = Math.floor(newTop) + "px";
+    btnNo.style.left = Math.floor(newLeft) + "px";
 })
 
 btnNo.addEventListener("touchend", function(){
