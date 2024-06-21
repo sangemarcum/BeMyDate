@@ -31,6 +31,14 @@ btnNo.addEventListener("mouseover", (event)=> {
     btnNo.style.left = Math.floor(newLeft) + "px";
 });
 
+btnNo.addEventListener("touchstart", function(){
+    btnNo.classList.add("btnHover")
+})
+
+btnNo.addEventListener("touchend", function(){
+    btnNo.classList.remove("btnHover")
+})
+
 btnYes.addEventListener("click", (e) => {
     btnNo.classList.add("hide");
     imageOne.classList.add("hide");
