@@ -32,7 +32,6 @@ btnNo.addEventListener("mouseover", (event)=> {
 });
 
 btnNo.addEventListener("touchstart", function() {
-    btnNo.classList.add("btnHover")
     const containerHeight = container.getBoundingClientRect().height;
     const containerWidth = container.getBoundingClientRect().width;
     const btnHeight = btnNo.getBoundingClientRect().height;
@@ -52,6 +51,7 @@ btnNo.addEventListener("touchstart", function() {
 
     btnNo.style.top = Math.floor(newTop) + "px";
     btnNo.style.left = Math.floor(newLeft) + "px";
+    btnNo.classList.add("btnHover")
 });
 
 btnNo.addEventListener("touchend", function(){
